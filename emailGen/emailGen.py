@@ -6,14 +6,14 @@ from botocore.exceptions import ClientError
 import os
 
 
-aws_access_id = "TBD"
-aws_secret_id = "TBD" #os.getenv('AWS_SECRET_ID',"")
+aws_access_id = os.getenv('AWS_ACCESS_ID','')#"TBD"
+aws_secret_id = os.getenv('AWS_SECRET_ID','')#"TBD" #os.getenv('AWS_SECRET_ID',"")
 
 s3 = boto3.client('s3',aws_access_key_id=aws_access_id,aws_secret_access_key=aws_secret_id)
 
 def genListOfIDs(tempFilename):
     emailListFile = open(tempFilename,"w")
-    emailListFile.write("amsuresh@cs.stonybrook.edu\n")
+    emailListFile.write("justin.sanjuan@uwaterloo.ca\n")
     emailListFile.close()
 
 def writeEmails1(curBucket,keynames,filenames):
@@ -97,7 +97,7 @@ def main(args):
     allText = []
   
     bucketStr = str(bucketName)+"\t prefix "+str(prefixNum)
-    allEmails = ["amsuresh@cs.stonybrook.edu"] 
+    allEmails = ["justin.sanjuan@uwaterloo.ca"] 
     genAccum = 0.0; writeAccum = 0.0; writeEnd = 0.0; opKey = []; opFilenames = []
     opPrefixNum = random.randrange(1,9999)
     allFileStr = ""
