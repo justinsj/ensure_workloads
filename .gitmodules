@@ -1,0 +1,3 @@
+[submodule "ensure_workloads"]
+	path = ensure_workloads
+	url = https://github.com/justinsj/ensure_workloads.git
