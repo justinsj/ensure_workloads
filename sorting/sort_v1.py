@@ -1,12 +1,13 @@
 #This code gets the input data segment and sorts them
 import json,sys
 import time,random,subprocess,copy,gc
+import os
 
 import boto3
 from botocore.exceptions import ClientError
 
-aws_access_id = "TBD"
-aws_secret_id = "TBD" #os.getenv('AWS_SECRET_ID',"")
+aws_access_id = os.getenv('AWS_ACCESS_ID',"")
+aws_secret_id = os.getenv('AWS_SECRET_ID',"")
 
 def pullFileFromStorage(bucketName,keyName,destFileName):
     print('Pulling File {} from local to bucket {} with key name {}'.format(keyName,bucketName,keyName))

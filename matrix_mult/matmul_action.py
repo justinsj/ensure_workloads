@@ -1,9 +1,10 @@
 import numpy as np
 import json,time,random
 import boto3
+import os
 
-aws_access_id = "TBD"
-aws_secret_id = "TBD" #os.getenv('AWS_SECRET_ID',"")
+aws_access_id = os.getenv('AWS_ACCESS_ID',"")
+aws_secret_id = os.getenv('AWS_SECRET_ID',"")
 
 def matmul(X, Y, rows, colums):
     result = np.zeros(shape=(rows, colums))
