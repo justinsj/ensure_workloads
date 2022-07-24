@@ -4,12 +4,14 @@
 
 import json,subprocess
 from PIL import Image
-import boto
-import boto.s3.connection
+import boto3
+
+aws_access_id = os.getenv('AWS_ACCESS_ID','')#"TBD"
+aws_secret_id = os.getenv('AWS_SECRET_ID','')#"TBD" #os.getenv('AWS_SECRET_ID',"")
+
+s3 = boto3.client('s3',aws_access_key_id=aws_access_id,aws_secret_access_key=aws_secret_id)
 
 
-access_key = "TBD"
-secret_key = "TBD" #os.getenv('AWS_SECRET_ID',"")
 hostname = "TBD" 
 portNum = "TBD"
 
